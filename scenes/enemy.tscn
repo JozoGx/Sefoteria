@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://cb3pj0snjy2tv"]
+
+[ext_resource type="Texture2D" uid="uid://7uon3ianfkyr" path="res://art/characters/slime.png" id="1_6gnjh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvjfu"]
+atlas = ExtResource("1_6gnjh")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8o7q"]
+atlas = ExtResource("1_6gnjh")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ynm8"]
+atlas = ExtResource("1_6gnjh")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1782"]
+atlas = ExtResource("1_6gnjh")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jivem"]
+atlas = ExtResource("1_6gnjh")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jo3fb"]
+atlas = ExtResource("1_6gnjh")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kxbv"]
+atlas = ExtResource("1_6gnjh")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icq8a"]
+atlas = ExtResource("1_6gnjh")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4lt8"]
+atlas = ExtResource("1_6gnjh")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuvk7"]
+atlas = ExtResource("1_6gnjh")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_46yxn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvjfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8o7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ynm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1782")
+}],
+"loop": true,
+"name": &"side_idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jivem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jo3fb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kxbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icq8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4lt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuvk7")
+}],
+"loop": true,
+"name": &"side_walk",
+"speed": 10.0
+}]
+
+[node name="enemy" type="CharacterBody2D"]
+visibility_layer = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -5)
+sprite_frames = SubResource("SpriteFrames_46yxn")
+animation = &"side_idle"
